@@ -37,6 +37,7 @@ function App() {
   }
 
   async function createTodo() {
+    console.log('create');
     if (!formData.name || !formData.description) return;
     await API.graphql({ query: createTodoMutation, variables: { input: formData } });
     if (formData.image) {
